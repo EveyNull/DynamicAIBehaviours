@@ -319,10 +319,12 @@
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/UnityEngine.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/VSSettingsProvider.ref.dll"
 "Assets/Agent.cs"
+"Assets/Food.cs"
+"Assets/FoodSource.cs"
 "Assets/GameController.cs"
 "Assets/Need.cs"
 "Assets/NeedData.cs"
-"Assets/NeedSource.cs"
+"Assets/SourceData.cs"
 -langversion:8.0
 
 /deterministic

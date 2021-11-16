@@ -9,7 +9,7 @@ public class NeedValues
     public float decayRate;
 }
 
-[CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/CreateNeedData")]
+[CreateAssetMenu(fileName = "NeedData", menuName = "ScriptableObjects/CreateNeedData")]
 public class NeedData : ScriptableObject
 {
     [SerializeField]

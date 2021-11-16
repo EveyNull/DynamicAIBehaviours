@@ -7,6 +7,7 @@ public class GameController : MonoBehaviour
     [System.NonSerialized]
     public static GameController Instance;
     public NeedData needData;
+    public SourceData sourceData;
 
     private void Awake()
     {
