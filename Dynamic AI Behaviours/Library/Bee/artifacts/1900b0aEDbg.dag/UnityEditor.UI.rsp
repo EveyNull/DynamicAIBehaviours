@@ -111,6 +111,11 @@
 -define:PACKAGE_ANIMATION
 -define:CSHARP_7_OR_LATER
 -define:CSHARP_7_3_OR_NEWER
+-r:"Assets/Vexe/DLLs/Editor/EditorExtensions/EditorExtensions.dll"
+-r:"Assets/Vexe/DLLs/Editor/EditorHelpers/EditorHelpers.dll"
+-r:"Assets/Vexe/DLLs/Fasterflect/Fasterflect.dll"
+-r:"Assets/Vexe/DLLs/Runtime/RuntimeExtensions/RuntimeExtensions.dll"
+-r:"Assets/Vexe/DLLs/Runtime/RuntimeHelpers/RuntimeHelpers.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2021.1.21f1/Editor/Data/Managed/UnityEditor.Graphs.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2021.1.21f1/Editor/Data/Managed/UnityEngine/UnityEditor.CoreModule.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2021.1.21f1/Editor/Data/Managed/UnityEngine/UnityEditor.DeviceSimulatorModule.dll"

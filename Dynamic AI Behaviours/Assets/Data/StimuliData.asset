@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dfaf27474a9dfd408cf331f4e40e03e, type: 3}
+  m_Name: StimuliData
+  m_EditorClassIdentifier: 
+  stimuli:
+  - {fileID: 11400000, guid: 0007c290d6f749548ae6d3f4f73e4b2c, type: 2}
+  - {fileID: 11400000, guid: ab6b20a9babf06e478573e2a90ed3e05, type: 2}
+  - {fileID: 11400000, guid: 0d2750cb0401125408ecfc0a12d0ec90, type: 2}
+  - {fileID: 11400000, guid: c25ee35e1e443624db80bb723bc08715, type: 2}
+  - {fileID: 11400000, guid: ec1afb8c45f0f6147b55a8708e7efd43, type: 2}
+  - {fileID: 11400000, guid: a45ca5155b9a0494fb939e3734cc259b, type: 2}
