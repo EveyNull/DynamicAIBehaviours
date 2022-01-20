@@ -12,11 +12,22 @@ public class GiveFood : GoalBehaviour
         
         while(Vector3.Distance(subject.transform.position, target.transform.position) > 1.0f)
         {
+            if(target.IsWaitingFor(subject) == false)
+            {
+                yield break;
+            }
             yield return 0;
         }
 
-        target.needs.SatisfyNeed(subject.needs.carriedFood.type);
-        subject.needs.carriedFood = null;
+        if (target.needs.carriedFood == true)
+        {
+            Debug.Log("Agent " + subject + " did not give food to " + target + " as it has food already!");
+            yield break;
+        }
+        Debug.Log("Agent " + subject + " gave food to " + target);
+
+        target.needs.GiveFood();
+        subject.needs.RemoveFood();
         yield break;
     }
 }

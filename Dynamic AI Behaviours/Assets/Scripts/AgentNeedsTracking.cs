@@ -6,9 +6,9 @@ public class AgentNeedsTracking : MonoBehaviour
 {
     private Agent agent;
     private GameController gameController;
-    private Need[] needs = new Need[3];
+    private Need[] needs = new Need[1];
 
-    public Food carriedFood = null;
+    public bool carriedFood = false;
     [SerializeField]
     GameObject carriedFoodObject;
 
@@ -48,31 +48,41 @@ public class AgentNeedsTracking : MonoBehaviour
         }
         if (lowestNeedVal <= 0.2f)
         {
+            
+            if(needs[lowestNeedIndex].type == Need.NeedType.FOOD && carriedFood)
+            {
+                EatFood();
+                return;
+            }
+
             agent.ProcessStimulus(StimuliData.Instance.GetStimulusByType(StimulusType.NEEDCRITICAL), null);
         }
         else if (lowestNeedVal <= 0.5f)
         {
+            if (needs[lowestNeedIndex].type == Need.NeedType.FOOD && carriedFood)
+            {
+                return;
+            }
             agent.ProcessStimulus(StimuliData.Instance.GetStimulusByType(StimulusType.NEEDHALF), null);
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    public void GiveFood()
     {
-        if (collision.collider.GetComponent<Food>())
-        {
-            Food food = collision.collider.GetComponent<Food>();
-            if (needs[(int)food.type].satisfaction < 0.6f)
-            {
-                food.ConsumeFood();
-                SatisfyNeed(food.type);
-            }
-            else if (carriedFood == null)
-            {
-                carriedFood = food;
-                food.ConsumeFood();
-                carriedFoodObject.SetActive(true);
-            }
-        }
+        carriedFood = true;
+        carriedFoodObject.SetActive(true);
+    }
+
+    public void EatFood()
+    {
+        SatisfyNeed(Need.NeedType.FOOD);
+        RemoveFood();
+    }
+
+    public void RemoveFood()
+    {
+        carriedFood = false;
+        carriedFoodObject.SetActive(false);
     }
 
     public void SatisfyNeed(Need.NeedType type)

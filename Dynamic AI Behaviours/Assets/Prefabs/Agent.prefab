@@ -175,8 +175,7 @@ MonoBehaviour:
   stimuliData: {fileID: 11400000, guid: 844ff3d06e0626c4f998cb5b2f10baf6, type: 2}
   sources:
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  currentGoals: []
   wanderRadius: 25
 --- !u!114 &3769568563415516207
 MonoBehaviour:
@@ -206,7 +205,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13575a6c4e7960745a6c9c111582ce9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  carriedFood: {fileID: 0}
+  carriedFood: 0
   carriedFoodObject: {fileID: 7402350551059082657}
 --- !u!1 &7402350551059082657
 GameObject:

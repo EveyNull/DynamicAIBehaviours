@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: SeenOtherAgent
   m_EditorClassIdentifier: 
   type: 0
+  overrideCurrentGoal: 0
   potentialResponses:
   - {fileID: 11400000, guid: c13a4d78faef1aa498394c7254717d4b, type: 2}
   - {fileID: 11400000, guid: 871d7df89f47507498aa05e20ba55a02, type: 2}

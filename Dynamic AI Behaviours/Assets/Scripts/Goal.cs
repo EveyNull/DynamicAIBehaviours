@@ -7,4 +7,5 @@ using UnityEngine.Events;
 public class Goal : ScriptableObject
 {
     public List<GoalBehaviour> behaviours;
+    public Agent target;
 }

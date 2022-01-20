@@ -14,7 +14,7 @@ public class Agent : MonoBehaviour
 
     public FoodSource[] sources = new FoodSource[3];
 
-    public Goal currentGoal;
+    public List<Goal> currentGoals;
     private Coroutine goalRoutine = null;
 
     private NavMeshAgent navAgent;
@@ -70,13 +70,21 @@ public class Agent : MonoBehaviour
 
     public void ProcessStimulus(Stimulus stimulus, Agent other)
     {
-        if (currentGoal == null || stimulus.overrideCurrentGoal)
+        if (stimulus.potentialResponses.Count > 0)
         {
-            if (stimulus.potentialResponses.Count > 0)
+            Goal newGoal = stimulus.potentialResponses[Random.Range(0, stimulus.potentialResponses.Count)];
+            newGoal.target = other;
+
+            if (currentGoals.Find(x => x.behaviours == newGoal.behaviours)) return;
+
+            if (currentGoals.Count == 0 || stimulus.overrideCurrentGoal)
             {
-                Goal newGoal = stimulus.potentialResponses[Random.Range(0, stimulus.potentialResponses.Count)];
-                currentGoal = newGoal;
-                goalRoutine = StartCoroutine(AchieveGoal(newGoal.behaviours, other));
+                currentGoals.Add(newGoal);
+                goalRoutine = StartCoroutine(AchieveGoal(newGoal.behaviours, newGoal.target));
+            }
+            else
+            {
+                currentGoals.Insert(0, newGoal);
             }
         }
     }
@@ -87,7 +95,16 @@ public class Agent : MonoBehaviour
         {
             yield return behaviour.ProcessBehaviour(this, target);
         }
-        goalRoutine = null;
+        currentGoals.RemoveAt(currentGoals.Count-1);
+        if(currentGoals.Count > 0)
+        {
+            Goal newGoal = currentGoals[currentGoals.Count - 1];
+            goalRoutine = StartCoroutine(AchieveGoal(newGoal.behaviours, newGoal.target));
+        }
+        else
+        {
+            goalRoutine = null;
+        }
     }
 
     public void IncreaseRelationship(Agent other)

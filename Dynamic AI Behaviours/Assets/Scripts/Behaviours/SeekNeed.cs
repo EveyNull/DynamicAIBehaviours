@@ -24,26 +24,5 @@ public class SeekNeed : GoalBehaviour
         {
             yield return 0;
         }
-
-        Food targetFood = null;
-        while(true)
-        {
-            Collider[] colliders = Physics.OverlapSphere(subject.transform.position, 5.0f);
-            foreach(Collider collider in colliders)
-            {
-                Food food = collider.GetComponent<Food>();
-                if(food != null && collider.GetComponent<Food>().type == lowestNeed.type)
-                {
-                    subject.ChooseNewDestination(food.transform.position);
-                    targetFood = food;
-                    break;
-                }
-            }
-            if(lowestNeed.satisfaction > needValue)
-            {
-                yield break;
-            }
-            yield return 0;
-        }
     }
 }

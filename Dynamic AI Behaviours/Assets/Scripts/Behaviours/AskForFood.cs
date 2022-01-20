@@ -7,37 +7,13 @@ public class AskForFood : GoalBehaviour
 {
     public override IEnumerator ProcessBehaviour(Agent subject, Agent target)
     {
-        Need lowest = subject.needs.LowestNeed();
-        float startSatisfaction = lowest.satisfaction;
-        Food targetFood = null;
-
-        Collider[] colliders = Physics.OverlapSphere(subject.transform.position, 5.0f);
-        foreach (Collider collider in colliders)
-        {
-            Food food = collider.GetComponent<Food>();
-            if (food != null && collider.GetComponent<Food>().type == lowest.type)
-            {
-                subject.ChooseNewDestination(food.transform.position);
-                targetFood = food;
-                break;
-            }
-        }
-
-        if(targetFood != null)
-        {
-            while(lowest.satisfaction <= startSatisfaction && targetFood.gameObject.activeInHierarchy == true)
-            {
-                yield return 0;
-            }
-            yield break;
-        }
-
         List<Agent> agents = subject.adjacencyChecker.GetAllNearbyAgents();
 
-        foreach(Agent agent in agents)
+        foreach (Agent agent in agents)
         {
-            if(agent.needs.carriedFood && agent.needs.carriedFood.type == lowest.type)
+            if (agent.needs.carriedFood && agent.needs.carriedFood)
             {
+                Debug.Log("Agent " + subject + " is asking " + agent + " for food!");
                 subject.ChooseNewDestination(agent.transform.position);
 
                 agent.ProcessStimulus(StimuliData.Instance.GetStimulusByType(StimulusType.ASKEDFORFOOD), subject);
@@ -46,7 +22,7 @@ public class AskForFood : GoalBehaviour
                 {
                     while (subject.IsWaitingFor(agent))
                     {
-                        if (agent.gameObject.activeInHierarchy == false || lowest.satisfaction > startSatisfaction)
+                        if (agent.gameObject.activeInHierarchy == false || subject.needs.carriedFood == true)
                         {
                             subject.StopWaitForAgent(agent);
                             yield break;
@@ -58,7 +34,6 @@ public class AskForFood : GoalBehaviour
 
             }
         }
-        yield break;
     }
 
 }
