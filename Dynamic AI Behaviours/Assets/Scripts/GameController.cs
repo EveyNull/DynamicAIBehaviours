@@ -14,4 +14,9 @@ public class GameController : MonoBehaviour
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
     }
+
+    public void PauseGame()
+    {
+        Time.timeScale = 0.0f;
+    }
 }

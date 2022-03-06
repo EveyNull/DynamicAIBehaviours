@@ -21,12 +21,13 @@ public class GiveFood : GoalBehaviour
 
         if (target.needs.carriedFood == true)
         {
-            Debug.Log("Agent " + subject + " did not give food to " + target + " as it has food already!");
+            Debug.Log("Agent " + subject + " did not give food to " + target + " as it has food already.");
             yield break;
         }
-        Debug.Log("Agent " + subject + " gave food to " + target);
+        Debug.Log("Agent " + subject + " gave food to " + target + ", increasing the other's opinion of them.");
 
         target.needs.GiveFood();
+        target.IncreaseRelationship(subject);
         subject.needs.RemoveFood();
         yield break;
     }

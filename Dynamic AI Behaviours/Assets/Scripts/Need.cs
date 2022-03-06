@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+[System.Serializable]
 public class Need
 {
     public enum NeedType
@@ -20,7 +21,7 @@ public class Need
     public void Init(NeedType need, float decayRate)
     {
         type = need;
-        satisfaction = 1.0f;
+        satisfaction = Random.Range(0.6f, 1.0f);
         decayPerSecond = decayRate;
     }
 

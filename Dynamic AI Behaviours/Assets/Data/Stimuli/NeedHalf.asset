@@ -14,6 +14,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 3
   overrideCurrentGoal: 0
+  middleNodeNumber: 3
+  inputNodes:
+  - inputType: 1
+    traitType: 0
+    weights:
+    - 0
+    - 1
+    - 0
+  - inputType: 0
+    traitType: 1
+    weights:
+    - 0
+    - 1
+    - 0
+  - inputType: 2
+    traitType: 0
+    weights:
+    - 1
+    - -1
+    - 0
+  middleNodeWeightings:
+  - weights:
+    - 1
+    - 0
+  - weights:
+    - 0
+    - 1
+  - weights:
+    - 0.5
+    - 0.5
   potentialResponses:
   - {fileID: 11400000, guid: f105db0b5fd18f14ebf67983be533cd0, type: 2}
   - {fileID: 11400000, guid: 04fd155367ef13d4ba0b7b7de25efa3e, type: 2}

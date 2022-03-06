@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using System.Linq;
 
 public class Agent : MonoBehaviour
 {
@@ -9,23 +10,29 @@ public class Agent : MonoBehaviour
 
     public AgentNeedsTracking needs;
     public AgentAdjacencyChecker adjacencyChecker;
+    public List<PersonalityTrait> personalityTraits;
 
     public StimuliData stimuliData;
 
     public FoodSource[] sources = new FoodSource[3];
 
-    public List<Goal> currentGoals;
+    public List<GoalBehaviour> currentBehaviours;
     private Coroutine goalRoutine = null;
+    private Dictionary<Stimulus, float> recentStimuli;
 
     private NavMeshAgent navAgent;
     private NavMeshObstacle selfObstacle;
     private GameObject currentNavTarget;
-    private Dictionary<Agent, float> relationships;
+    public Dictionary<Agent, float> relationships;
+    public List<float> relationshipsPureValues;
 
     [SerializeField]
     private float wanderRadius = 20.0f;
 
     private List<Agent> waitingForOthers;
+
+    public GameObject happyThought;
+    public GameObject sadThought;
 
     // Start is called before the first frame update
     void Start()
@@ -36,11 +43,35 @@ public class Agent : MonoBehaviour
         navAgent = GetComponent<NavMeshAgent>();
         selfObstacle = GetComponent<NavMeshObstacle>();
         relationships = new Dictionary<Agent, float>();
+        recentStimuli = new Dictionary<Stimulus, float>();
         waitingForOthers = new List<Agent>();
     }
 
     private void Update()
     {
+        List<Stimulus> toRemove = new List<Stimulus>();
+        List<KeyValuePair<Stimulus, float>> toUpdate = new List<KeyValuePair<Stimulus, float>>();
+        foreach(var entry in recentStimuli)
+        {
+            float timer = entry.Value;
+            if((timer -= Time.deltaTime) <= 0.0f)
+            {
+                toRemove.Add(entry.Key);
+            }
+            else
+            {
+                toUpdate.Add(new KeyValuePair<Stimulus, float>(entry.Key, timer));
+            }
+        }
+        foreach(Stimulus entry in toRemove)
+        {
+            recentStimuli.Remove(entry);
+        }
+        foreach(var entry in toUpdate)
+        {
+            recentStimuli[entry.Key] = entry.Value;
+        }
+        
         if (goalRoutine == null)
         {
             Wander();
@@ -70,36 +101,38 @@ public class Agent : MonoBehaviour
 
     public void ProcessStimulus(Stimulus stimulus, Agent other)
     {
+        if (recentStimuli.ContainsKey(stimulus)) return;
+        recentStimuli.Add(stimulus, 5.0f);
         if (stimulus.potentialResponses.Count > 0)
         {
-            Goal newGoal = stimulus.potentialResponses[Random.Range(0, stimulus.potentialResponses.Count)];
+            GoalBehaviour newGoal = stimulus.GetBehaviour(this, other);
+            if (newGoal == null) return;
             newGoal.target = other;
 
-            if (currentGoals.Find(x => x.behaviours == newGoal.behaviours)) return;
+            if (currentBehaviours.Find(x => x == newGoal)) return;
 
-            if (currentGoals.Count == 0 || stimulus.overrideCurrentGoal)
+            if (currentBehaviours.Count == 0 || stimulus.overrideCurrentGoal)
             {
-                currentGoals.Add(newGoal);
-                goalRoutine = StartCoroutine(AchieveGoal(newGoal.behaviours, newGoal.target));
+                currentBehaviours.Add(newGoal);
+                goalRoutine = StartCoroutine(AchieveGoal(newGoal, newGoal.target));
             }
             else
             {
-                currentGoals.Insert(0, newGoal);
+                currentBehaviours.Insert(0, newGoal);
             }
         }
     }
 
-    private IEnumerator AchieveGoal(List<GoalBehaviour> behaviours, Agent target)
+    private IEnumerator AchieveGoal(GoalBehaviour behaviour, Agent target)
     {
-        foreach(GoalBehaviour behaviour in behaviours)
+        yield return behaviour.ProcessBehaviour(this, target);
+
+        currentBehaviours.RemoveAt(currentBehaviours.Count-1);
+
+        if(currentBehaviours.Count > 0)
         {
-            yield return behaviour.ProcessBehaviour(this, target);
-        }
-        currentGoals.RemoveAt(currentGoals.Count-1);
-        if(currentGoals.Count > 0)
-        {
-            Goal newGoal = currentGoals[currentGoals.Count - 1];
-            goalRoutine = StartCoroutine(AchieveGoal(newGoal.behaviours, newGoal.target));
+            GoalBehaviour newGoal = currentBehaviours[currentBehaviours.Count - 1];
+            goalRoutine = StartCoroutine(AchieveGoal(newGoal, newGoal.target));
         }
         else
         {
@@ -111,20 +144,22 @@ public class Agent : MonoBehaviour
     {
         if (relationships.ContainsKey(other) == false)
         {
-            relationships.Add(other, 0.5f);
+            relationships.Add(other, 0f);
         }
-        relationships[other] += 0.05f;
-        Debug.Log(this + " relationship with " + other + " increased! Is now " + relationships[other]);
+        relationships[other] += 0.2f;
+        relationshipsPureValues = relationships.Values.ToList();
+        StartCoroutine(ShowMood(true));
     }
 
     public void ReduceRelationship(Agent other)
     {
         if (relationships.ContainsKey(other) == false)
         {
-            relationships.Add(other, 0.5f);
+            relationships.Add(other, 0f);
         }
-        relationships[other] -= 0.05f;
-        Debug.Log(this + " relationship with " + other + " decreased! Is now " + relationships[other]);
+        relationships[other] -= 0.2f;
+        relationshipsPureValues = relationships.Values.ToList();
+        StartCoroutine(ShowMood(false));
     }
 
     public void WaitForAgent(Agent agent)
@@ -146,5 +181,24 @@ public class Agent : MonoBehaviour
     public bool IsWaitingFor(Agent agent)
     {
         return waitingForOthers.Contains(agent);
+    }
+
+    public float GetMood()
+    {
+        float count = 0;
+        foreach(Need need in needs.needs)
+        {
+            count += need.satisfaction;
+        }
+        return (count / needs.needs.Length) - 0.5f;
+    }
+
+    public IEnumerator ShowMood(bool good)
+    {
+        GameObject thoughtBubble = good ? happyThought : sadThought;
+
+        thoughtBubble.SetActive(true);
+        yield return new WaitForSeconds(5.0f);
+        thoughtBubble.SetActive(false);
     }
 }

@@ -14,6 +14,80 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 0
   overrideCurrentGoal: 0
+  middleNodeNumber: 3
+  inputNodes:
+  - inputType: 0
+    traitType: 3
+    weights:
+    - 1
+    - 0
+    - 0.5
+    biases:
+    - 1
+    - 1
+    - 1
+    outputs: []
+  - inputType: 0
+    traitType: 2
+    weights:
+    - 0
+    - 1
+    - 0.5
+    biases:
+    - 1
+    - 1
+    - 1
+    outputs: []
+  - inputType: 2
+    traitType: 0
+    weights:
+    - 1
+    - -1
+    - 0
+    biases:
+    - 1
+    - 1
+    - 1
+    outputs: []
+  - inputType: 1
+    traitType: 0
+    weights:
+    - 1
+    - -1
+    - 0
+    biases:
+    - 1
+    - 1
+    - 1
+    outputs: []
+  middleNodes:
+  - summedInput: 0
+    weights:
+    - 0
+    - 0
+    biases:
+    - 1
+    - 1
+    outputs: []
+  - summedInput: 0
+    weights:
+    - 0
+    - 0
+    biases:
+    - 1
+    - 1
+    outputs: []
+  - summedInput: 0
+    weights:
+    - 0
+    - 0
+    biases:
+    - 1
+    - 1
+    outputs: []
   potentialResponses:
-  - {fileID: 11400000, guid: c13a4d78faef1aa498394c7254717d4b, type: 2}
-  - {fileID: 11400000, guid: 871d7df89f47507498aa05e20ba55a02, type: 2}
+  - {fileID: 11400000, guid: 01125af49f4a3234d989fd5ef36f3d77, type: 2}
+  - {fileID: 11400000, guid: 3eafa994874a3d74992e491bfce748f3, type: 2}
+  finalValues:
+  - 0
+  - 0

@@ -7,6 +7,7 @@ public class SeekNeed : GoalBehaviour
 {
     public override IEnumerator ProcessBehaviour(Agent subject, Agent target)
     {
+        Debug.Log(subject.ToString() + " decided to look for food for themselves.");
         Need lowestNeed = subject.needs.LowestNeed();
         float needValue = lowestNeed.satisfaction;
         FoodSource foodSource = null;

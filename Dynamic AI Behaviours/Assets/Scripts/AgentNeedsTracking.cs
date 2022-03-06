@@ -6,7 +6,7 @@ public class AgentNeedsTracking : MonoBehaviour
 {
     private Agent agent;
     private GameController gameController;
-    private Need[] needs = new Need[1];
+    public Need[] needs = new Need[1];
 
     public bool carriedFood = false;
     [SerializeField]
@@ -36,10 +36,16 @@ public class AgentNeedsTracking : MonoBehaviour
             Need need = needs[i];
             if (need.satisfaction <= 0.0f)
             {
+                need.satisfaction = 0.0f;
+                /*
                 Destroy(gameObject);
                 return;
+                */
             }
-            need.Decay();
+            else
+            {
+                need.Decay();
+            }
             if (need.satisfaction < lowestNeedVal)
             {
                 lowestNeedVal = need.satisfaction;
