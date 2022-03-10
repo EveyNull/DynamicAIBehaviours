@@ -27,8 +27,9 @@ public class StimulusInputNode
 {
     public StimulusInput inputType;
     public PersonalityTrait traitType;
+    public float input;
     public List<float> weights;
-    public List<float> biases;
+    public float bias;
     public List<float> outputs;
 }
 
@@ -37,7 +38,7 @@ public class MiddleNode
 {
     public float summedInput;
     public List<float> weights;
-    public List<float> biases;
+    public float bias;
     public List<float> outputs;
 }
 
@@ -69,22 +70,7 @@ public class Stimulus : ScriptableObject
                     }
                     else
                     {
-                        inputNode.weights.Add(0);
-                    }
-                }
-            }
-            if(inputNode.biases.Count != middleNodeNumber && middleNodeNumber != 0)
-            {
-                List<float> previousBiases = inputNode.biases;
-                for (int i = 0; i < middleNodeNumber; ++i)
-                {
-                    if (i < previousBiases.Count)
-                    {
-                        inputNode.biases.Add(previousBiases[i]);
-                    }
-                    else
-                    {
-                        inputNode.biases.Add(1);
+                        inputNode.weights.Add(Random.Range(-1.0f, 1.0f));
                     }
                 }
             }
@@ -106,20 +92,14 @@ public class Stimulus : ScriptableObject
                     {
                         middleNodes[i].weights.RemoveRange(potentialResponses.Count, middleNodes[i].weights.Count - potentialResponses.Count);
                     }
-                    if(middleNodes[i].biases.Count > potentialResponses.Count)
-                    {
-                        middleNodes[i].biases.RemoveRange(potentialResponses.Count, middleNodes[i].weights.Count - potentialResponses.Count);
-                    }
                 }
                 else
                 {
                     MiddleNode newNode = new MiddleNode();
                     newNode.weights = new List<float>();
-                    newNode.biases = new List<float>();
                     for (int j = 0; j < potentialResponses.Count; ++j)
                     {
-                        newNode.weights.Add(0);
-                        newNode.biases.Add(1);
+                        newNode.weights.Add(Random.Range(-1.0f, 1.0f)); ;
                     }
                     middleNodes.Add(newNode);
                 }
@@ -131,17 +111,9 @@ public class Stimulus : ScriptableObject
             {
                 node.weights.RemoveRange(potentialResponses.Count, node.weights.Count - potentialResponses.Count);
             }
-            if(node.biases.Count > potentialResponses.Count)
-            {
-                node.biases.RemoveRange(potentialResponses.Count, node.weights.Count - potentialResponses.Count);
-            }
             while(node.weights.Count < potentialResponses.Count)
             {
                 node.weights.Add(0);
-            }
-            while(node.biases.Count < potentialResponses.Count)
-            {
-                node.biases.Add(1);
             }
         }
 
@@ -152,19 +124,39 @@ public class Stimulus : ScriptableObject
         }
     }
 
+    public void RandomiseWeights()
+    {
+        foreach(var node in inputNodes)
+        {
+            for(int i = 0; i < node.weights.Count; ++i)
+            {
+                node.weights[i] = Random.Range(-1.0f, 1.0f);
+                node.bias = 1;
+            }
+        }
+        foreach (var node in middleNodes)
+        {
+            for (int i = 0; i < node.weights.Count; ++i)
+            {
+                node.weights[i] = Random.Range(-1.0f, 1.0f);
+                node.bias = 1;
+            }
+        }
+    }
+
     public GoalBehaviour GetBehaviour(Agent subject, Agent target)
     {
         for (int i = 0; i < inputNodes.Count; ++i)
         {
             float output = GetNodeOutput(subject, target, inputNodes[i]);
+            inputNodes[i].input = output;
             inputNodes[i].outputs.Clear();
             inputNodes[i].outputs = new List<float>();
             for(int j = 0; j < inputNodes[i].weights.Count; ++j)
             {
-                inputNodes[i].outputs.Add((output * inputNodes[i].weights[j]) + inputNodes[i].biases[j]);
+                inputNodes[i].outputs.Add((output * inputNodes[i].weights[j]) + inputNodes[i].bias);
             }
         }
-        List<float> outputNodeInputs = new List<float>(potentialResponses.Count);
         for(int i = 0; i < middleNodes.Count; ++i)
         {
             float input = 0;
@@ -182,23 +174,19 @@ public class Stimulus : ScriptableObject
 
             for(int j = 0; j < middleNodes[i].weights.Count; ++j)
             {
-                middleNodes[i].outputs.Add((input * middleNodes[i].weights[j]) + middleNodes[i].biases[j]);
+                middleNodes[i].outputs.Add((input * middleNodes[i].weights[j]) + middleNodes[i].bias);
             }
         }
-        for(int i = 0; i < outputNodeInputs.Capacity; ++i)
+        List<float> outputNodeInputs = new List<float>(potentialResponses.Count);
+        for (int i = 0; i < outputNodeInputs.Capacity; ++i)
         {
             outputNodeInputs.Add(0.0f);
             for(int j = 0; j < middleNodes.Count; ++j)
             {
                 outputNodeInputs[i] += middleNodes[j].outputs[i];
             }
-            float finalOutput = 0.0f;
-            foreach(var input in outputNodeInputs)
-            {
-                finalOutput += input;
-            }
-            finalOutput /= middleNodeNumber;
-            finalValues[i] = finalOutput;
+            outputNodeInputs[i] /= middleNodeNumber;
+            finalValues[i] = outputNodeInputs[i];
         }
 
         string outputString = string.Join(",", finalValues);
@@ -214,51 +202,67 @@ public class Stimulus : ScriptableObject
             }
         }
 
+        int responseGiven = highestIndex;
+
+        BackPropagateUI.Instance.UpdateUI(this, responseGiven);
+
         return potentialResponses[highestIndex];
     }
 
-    public void CorrectOutputWithValue(int indexOfBehaviour, float expectedValue)
+    public void CorrectOutput(int indexOfExpectedBehaviour, int indexOfActualBehaviour)
     {
-        float trueValue = finalValues[indexOfBehaviour];
-        float error = CalculateError(trueValue, expectedValue);
-        BackPropagate(error);
+        BackPropagate(Sigmoid(finalValues[indexOfExpectedBehaviour] - finalValues[indexOfActualBehaviour]), indexOfExpectedBehaviour);
+
     }
 
-    private float CalculateError(float outputValue, float correctValue)
+    private void BackPropagate(float error, int correctIndex)
     {
-        return Mathf.Abs(correctValue - outputValue);
-    }
-
-    private void BackPropagate(float error)
-    {
-        for(int i = 0; i < middleNodes.Count; ++i)
+        List<float> sErrors = new List<float>();
+        for(int i = 0; i < potentialResponses.Count; ++i)
         {
-            float middleError = 0.0f;
-            for (int j = 0; j < middleNodes[i].outputs.Count; ++j)
-            {
-                float biasDiff = Sigmoid(middleNodes[i].outputs[j]) * error;
-                middleNodes[i].biases[j] += biasDiff;
-                float weightDiff = middleNodes[i].outputs[j] * biasDiff;
-                middleNodes[i].weights[j] += weightDiff;
+            float correctOutput;
+            if (i == correctIndex) correctOutput = (finalValues[i] + error);
+            else correctOutput = (finalValues[i] - error);
 
-                float middleNodeExpectedOutput = (middleNodes[i].summedInput * middleNodes[i].weights[j]) + middleNodes[i].biases[j];
-                middleError += ((middleNodeExpectedOutput - middleNodes[i].outputs[j]) - middleNodes[i].biases[j]) / middleNodes[i].weights[j];
+            float nodeError = finalValues[i] - correctOutput;
+            float sNodeError = nodeError * Derivative(Sigmoid(finalValues[i]));
+            sErrors.Add(sNodeError);
+
+            for(int j = 0; j < middleNodeNumber; ++j)
+            {
+                middleNodes[j].weights[i] -= sNodeError * middleNodes[j].outputs[i];
+                middleNodes[j].bias -= sNodeError;
             }
-            middleError /= potentialResponses.Count;
+        }
+
+        for(int i = 0; i < middleNodeNumber; ++i)
+        {
+            float sNodeError = 0;
+            for(int j = 0; j < potentialResponses.Count; ++j)
+            {
+                sNodeError += sErrors[j] * middleNodes[i].weights[j];
+
+            }
+            sNodeError *= Derivative(Sigmoid(middleNodes[i].summedInput));
+
             for(int j = 0; j < inputNodes.Count; ++j)
             {
-                float biasDiff = Sigmoid(inputNodes[j].outputs[i]) * middleError;
-                inputNodes[j].biases[j] += biasDiff;
-                float weightDiff = inputNodes[j].outputs[i] * biasDiff;
-                inputNodes[j].weights[i] += weightDiff;
+                inputNodes[j].weights[i] -= sNodeError * inputNodes[j].outputs[i];
+                inputNodes[j].bias -= sNodeError;
             }
         }
     }
 
+    private float Derivative(float input)
+    {
+        float output = input * (1 - input);
+        return output;
+    }
 
     private float Sigmoid(float input)
     {
-        return 1.0f / (1.0f + Mathf.Exp(-input));
+        float output = 1.0f / (1.0f + Mathf.Exp(-input));
+        return output;
     }
 
     private float GetNodeOutput(Agent subject, Agent target, StimulusInputNode node)

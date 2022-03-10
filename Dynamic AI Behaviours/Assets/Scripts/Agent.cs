@@ -125,6 +125,7 @@ public class Agent : MonoBehaviour
 
     private IEnumerator AchieveGoal(GoalBehaviour behaviour, Agent target)
     {
+        yield return new WaitForSeconds(1.0f);
         yield return behaviour.ProcessBehaviour(this, target);
 
         currentBehaviours.RemoveAt(currentBehaviours.Count-1);
