@@ -7,9 +7,6 @@ public enum StimulusType
     ADJACENCY,
     GREETED,
     INSULTED,
-    NEEDHALF,
-    NEEDCRITICAL,
-    ASKEDFORFOOD,
     COUNT
 }
 

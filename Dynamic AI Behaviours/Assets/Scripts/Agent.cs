@@ -8,13 +8,10 @@ public class Agent : MonoBehaviour
 {
     private GameController gameController;
 
-    public AgentNeedsTracking needs;
     public AgentAdjacencyChecker adjacencyChecker;
     public List<PersonalityTrait> personalityTraits;
 
     public StimuliData stimuliData;
-
-    public FoodSource[] sources = new FoodSource[3];
 
     public List<GoalBehaviour> currentBehaviours;
     private Coroutine goalRoutine = null;
@@ -31,6 +28,8 @@ public class Agent : MonoBehaviour
 
     private List<Agent> waitingForOthers;
 
+    private float mood;
+
     public GameObject happyThought;
     public GameObject sadThought;
 
@@ -38,7 +37,6 @@ public class Agent : MonoBehaviour
     void Start()
     {
         if(gameController == null) gameController = GameController.Instance;
-        needs = GetComponent<AgentNeedsTracking>();
         adjacencyChecker = GetComponent<AgentAdjacencyChecker>();
         navAgent = GetComponent<NavMeshAgent>();
         selfObstacle = GetComponent<NavMeshObstacle>();
@@ -75,6 +73,12 @@ public class Agent : MonoBehaviour
         if (goalRoutine == null)
         {
             Wander();
+            GetComponent<Animator>().SetBool("Walking", true);
+        }
+        else
+        {
+            navAgent.destination = transform.position;
+            GetComponent<Animator>().SetBool("Walking", false);
         }
     }
 
@@ -102,6 +106,7 @@ public class Agent : MonoBehaviour
     public void ProcessStimulus(Stimulus stimulus, Agent other)
     {
         if (recentStimuli.ContainsKey(stimulus)) return;
+        if (currentBehaviours.Count > 0) return;
         recentStimuli.Add(stimulus, 5.0f);
         if (stimulus.potentialResponses.Count > 0)
         {
@@ -141,6 +146,12 @@ public class Agent : MonoBehaviour
         }
     }
 
+    public void UpdateMood(float moodChange)
+    {
+        mood += moodChange;
+        StartCoroutine(ShowMood(moodChange > 0));
+    }
+
     public void IncreaseRelationship(Agent other)
     {
         if (relationships.ContainsKey(other) == false)
@@ -149,7 +160,6 @@ public class Agent : MonoBehaviour
         }
         relationships[other] += 0.2f;
         relationshipsPureValues = relationships.Values.ToList();
-        StartCoroutine(ShowMood(true));
     }
 
     public void ReduceRelationship(Agent other)
@@ -160,7 +170,6 @@ public class Agent : MonoBehaviour
         }
         relationships[other] -= 0.2f;
         relationshipsPureValues = relationships.Values.ToList();
-        StartCoroutine(ShowMood(false));
     }
 
     public void WaitForAgent(Agent agent)
@@ -186,12 +195,7 @@ public class Agent : MonoBehaviour
 
     public float GetMood()
     {
-        float count = 0;
-        foreach(Need need in needs.needs)
-        {
-            count += need.satisfaction;
-        }
-        return (count / needs.needs.Length) - 0.5f;
+        return mood;
     }
 
     public IEnumerator ShowMood(bool good)

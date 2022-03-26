@@ -18,51 +18,65 @@ MonoBehaviour:
   inputNodes:
   - inputType: 0
     traitType: 2
+    input: 1
     weights:
-    - 0
-    - 0
-    - 0
-    biases:
-    - 1
-    - 1
-    - 1
-    outputs: []
+    - 0.30469272
+    - -0.33372033
+    - -0.19755828
+    bias: 1
+    outputs:
+    - 1.3046927
+    - 0.6662797
+    - 0.8024417
   - inputType: 0
-    traitType: 0
+    traitType: 1
+    input: 0
     weights:
-    - 0
-    - 0
-    - 0
-    biases:
+    - 0.36869094
+    - -0.3529545
+    - 0.77064824
+    bias: 1
+    outputs:
     - 1
     - 1
     - 1
-    outputs: []
+  - inputType: 0
+    traitType: 3
+    input: 0
+    weights:
+    - 0.36869094
+    - -0.3529545
+    - 0.77064824
+    bias: 1
+    outputs:
+    - 1
+    - 1
+    - 1
   middleNodes:
-  - summedInput: 0
+  - summedInput: 1.1523464
     weights:
-    - 0
-    - 0
-    biases:
-    - 1
-    - 1
-    outputs: []
-  - summedInput: 0
+    - 0.9886844
+    - 0.06720817
+    bias: 1
+    outputs:
+    - 2.1393068
+    - 1.077447
+  - summedInput: 0.83313984
     weights:
-    - 0
-    - 0
-    biases:
-    - 1
-    - 1
-    outputs: []
-  - summedInput: 0
+    - 0.36329958
+    - 0.3439903
+    bias: 1
+    outputs:
+    - 1.3026793
+    - 1.286592
+  - summedInput: 0.90122086
     weights:
-    - 0
-    - 0
-    biases:
-    - 1
-    - 1
-    outputs: []
+    - 0.683624
+    - 0.018086076
+    bias: 1
+    outputs:
+    - 1.6160963
+    - 1.0162996
   potentialResponses:
   - {fileID: 11400000, guid: 3eafa994874a3d74992e491bfce748f3, type: 2}
   - {fileID: 0}
