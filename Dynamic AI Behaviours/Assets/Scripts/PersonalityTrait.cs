@@ -8,5 +8,6 @@ public enum PersonalityTrait
     COWARD,
     AGGRESSIVE,
     KIND,
+    RUDE,
     COUNT
 }

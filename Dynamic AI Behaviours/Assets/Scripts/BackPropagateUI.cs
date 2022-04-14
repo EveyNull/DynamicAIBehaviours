@@ -10,6 +10,7 @@ public class BackPropagateUI : MonoBehaviour
     private Stimulus currentStimulus;
     private int outputBehaviour;
     public Text currentStimulusText;
+    public Button initializeButton;
     public InputField inputField;
 
     public List<Text> inputTexts;
@@ -24,7 +25,8 @@ public class BackPropagateUI : MonoBehaviour
         {
             text.gameObject.SetActive(false);
         }
-        currentStimulusText.text = "";
+        currentStimulusText.text = "No stimulus to examine";
+        initializeButton.gameObject.SetActive(false);
     }
 
     public void RandomiseStimulusWeights()
@@ -63,6 +65,7 @@ public class BackPropagateUI : MonoBehaviour
                 outputTexts[i].gameObject.SetActive(false);
             }
         }
+        initializeButton.gameObject.SetActive(true);
     }
 
     public void InitiateBackPropagation(int expectedBehaviour)

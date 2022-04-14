@@ -1,3 +1,4 @@
+using SimpleFileBrowser;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,8 +7,9 @@ public class GameController : MonoBehaviour
 {
     [System.NonSerialized]
     public static GameController Instance;
-    public NeedData needData;
-    public SourceData sourceData;
+
+    [SerializeField]
+    private Canvas backPropagateCanvas;
 
     private void Awake()
     {
@@ -18,5 +20,6 @@ public class GameController : MonoBehaviour
     public void PauseGame()
     {
         Time.timeScale = 1.0f - Time.timeScale;
+        backPropagateCanvas.enabled = Time.timeScale == 0.0f;
     }
 }
