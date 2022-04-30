@@ -18,73 +18,77 @@ MonoBehaviour:
   inputNodes:
   - inputType: 0
     traitType: 3
+    input: 1
     weights:
     - 1
     - 0
     - 0
-    biases:
+    bias: 0
+    outputs:
     - 1
-    - 1
-    - 1
-    outputs: []
+    - 0
+    - 0
   - inputType: 0
-    traitType: 2
+    traitType: 4
+    input: 1
     weights:
     - -1
     - 1
     - 0
-    biases:
+    bias: 0
+    outputs:
+    - -1
     - 1
-    - 1
-    - 1
-    outputs: []
+    - 0
   - inputType: 2
     traitType: 0
+    input: 0
     weights:
     - 1
     - -1
     - 0
-    biases:
-    - 1
-    - 1
-    - 1
-    outputs: []
+    bias: 0
+    outputs:
+    - 0
+    - 0
+    - 0
   - inputType: 1
     traitType: 0
+    input: 0.2
     weights:
     - 1
     - -1
     - 0
-    biases:
-    - 1
-    - 1
-    - 1
-    outputs: []
+    bias: 0
+    outputs:
+    - 0.2
+    - -0.2
+    - 0
   middleNodes:
+  - summedInput: 0.05
+    weights:
+    - 0
+    - 0
+    bias: 0
+    outputs:
+    - 0
+    - 0
+  - summedInput: 0.2
+    weights:
+    - 0
+    - 0
+    bias: 0
+    outputs:
+    - 0
+    - 0
   - summedInput: 0
     weights:
     - 0
     - 0
-    biases:
-    - 1
-    - 1
-    outputs: []
-  - summedInput: 0
-    weights:
+    bias: 0
+    outputs:
     - 0
     - 0
-    biases:
-    - 1
-    - 1
-    outputs: []
-  - summedInput: 0
-    weights:
-    - 0
-    - 0
-    biases:
-    - 1
-    - 1
-    outputs: []
   potentialResponses:
   - {fileID: 11400000, guid: 52e10a2320d6187428f1eaff8be8b570, type: 2}
   - {fileID: 11400000, guid: 3eafa994874a3d74992e491bfce748f3, type: 2}

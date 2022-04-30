@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2195d321a02762141a3fce938347d049, type: 3}
+  m_Name: Punched
+  m_EditorClassIdentifier: 
+  type: 3
+  overrideCurrentGoal: 0
+  middleNodeNumber: 3
+  inputNodes:
+  - inputType: 0
+    traitType: 2
+    input: 0
+    weights:
+    - -0.691813
+    - 0.9394405
+    - -0.8399532
+    bias: 0
+    outputs: []
+  - inputType: 0
+    traitType: 1
+    input: 0
+    weights:
+    - -0.691813
+    - 0.9394405
+    - -0.8399532
+    bias: 0
+    outputs: []
+  - inputType: 2
+    traitType: 0
+    input: 0
+    weights:
+    - -0.691813
+    - 0.9394405
+    - -0.8399532
+    bias: 0
+    outputs: []
+  - inputType: 3
+    traitType: 0
+    input: 0
+    weights:
+    - -0.691813
+    - 0.9394405
+    - -0.8399532
+    bias: 0
+    outputs: []
+  middleNodes:
+  - summedInput: 0
+    weights:
+    - 0
+    - 0
+    bias: 0
+    outputs: []
+  - summedInput: 0
+    weights:
+    - 0
+    - 0
+    bias: 0
+    outputs: []
+  - summedInput: 0
+    weights:
+    - 0
+    - 0
+    bias: 0
+    outputs: []
+  potentialResponses:
+  - {fileID: 11400000, guid: e7f6da0ce7e74c7498db69b331809980, type: 2}
+  - {fileID: 0}
+  finalValues:
+  - 0
+  - 0

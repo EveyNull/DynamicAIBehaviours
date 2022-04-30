@@ -337,6 +337,7 @@
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/UnityEngine.TestRunner.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/UnityEngine.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/VSSettingsProvider.ref.dll"
+"Assets/DataDiagram/Editor/DD_Menu.cs"
 "Assets/Vexe/DEVBUS/Editor/BetterUndoEditorExtensions.cs"
 "Assets/Vexe/DEVBUS/Editor/BetterUndoMenuItems.cs"
 "Assets/Vexe/DEVBUS/Editor/SelectionOperation.cs"

@@ -9,6 +9,15 @@ public class BackPropagateUI : MonoBehaviour
 
     private Stimulus currentStimulus;
     private int outputBehaviour;
+
+    [SerializeField]
+    private StimuliData stimuliData;
+
+    [SerializeField]
+    private Dropdown stimulusFilter;
+
+    private Stimulus filteredStimulus;
+
     public Text currentStimulusText;
     public Button initializeButton;
     public InputField inputField;
@@ -27,6 +36,31 @@ public class BackPropagateUI : MonoBehaviour
         }
         currentStimulusText.text = "No stimulus to examine";
         initializeButton.gameObject.SetActive(false);
+        foreach(var stimulus in stimuliData.stimuli)
+        {
+            Dropdown.OptionData newOption = new Dropdown.OptionData();
+            newOption.text = stimulus.name;
+            stimulusFilter.options.Add(newOption);
+        }
+        stimulusFilter.RefreshShownValue();
+    }
+
+    public void UpdateFilter()
+    {
+        Stimulus newFilter = stimuliData.stimuli.Find(stimulus => stimulus.name == stimulusFilter.options[stimulusFilter.value].text);
+        if(newFilter)
+        {
+            filteredStimulus = newFilter;
+        }
+        else
+        {
+            filteredStimulus = null;
+        }
+    }
+
+    public void ShowHide()
+    {
+        GetComponent<Canvas>().enabled = !GetComponent<Canvas>().enabled;
     }
 
     public void RandomiseStimulusWeights()
@@ -36,6 +70,8 @@ public class BackPropagateUI : MonoBehaviour
 
     public void UpdateUI(Stimulus stimulus, int responseGiven)
     {
+        if (filteredStimulus != null && filteredStimulus != stimulus) return;
+
         currentStimulus = stimulus;
         outputBehaviour = responseGiven;
         currentStimulusText.text = stimulus.ToString();

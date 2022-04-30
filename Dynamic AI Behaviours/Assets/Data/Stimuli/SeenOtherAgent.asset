@@ -18,80 +18,80 @@ MonoBehaviour:
   inputNodes:
   - inputType: 0
     traitType: 3
-    input: 1
-    weights:
-    - -0.0759095
-    - 0.8899941
-    - -0.3248028
-    bias: 3
-    outputs:
-    - 2.9240904
-    - 3.8899941
-    - 2.6751971
-  - inputType: 0
-    traitType: 2
     input: 0
     weights:
-    - -0.02851498
-    - 0.9285831
-    - -0.5076725
-    bias: 2
+    - 2.795034
+    - -0.4825049
+    - 0.8833209
+    bias: 1.020716
     outputs:
-    - 2
-    - 2
-    - 2
+    - 1.020716
+    - 1.020716
+    - 1.020716
+  - inputType: 0
+    traitType: 4
+    input: 0
+    weights:
+    - 0.4829334
+    - 3.48984
+    - 0.98986
+    bias: 1.020716
+    outputs:
+    - 1.020716
+    - 1.020716
+    - 1.020716
   - inputType: 2
     traitType: 0
     input: 0
     weights:
-    - 0.598505
-    - 0.7244129
-    - 0.4469528
-    bias: 4
+    - 0.314603
+    - -0.039624576
+    - 0.73146594
+    bias: 1.020716
     outputs:
-    - 4
-    - 4
-    - 4
+    - 1.020716
+    - 1.020716
+    - 1.020716
   - inputType: 1
     traitType: 0
     input: 0
     weights:
-    - 0.5203979
-    - 0.8696165
-    - 0.755734
-    bias: 5
+    - -0.1939553
+    - -0.6736943
+    - -0.8862387
+    bias: 1.020716
     outputs:
-    - 5
-    - 5
-    - 5
+    - 1.020716
+    - 1.020716
+    - 1.020716
   middleNodes:
-  - summedInput: 3.4810226
+  - summedInput: 1.020716
     weights:
-    - 0.08118951
-    - -0.1721023
-    bias: 5
+    - 0.7798527
+    - 0.2039927
+    bias: 1.0483034
     outputs:
-    - 5.2826223
-    - 4.400908
-  - summedInput: 3.7224984
+    - 1.8443115
+    - 1.2565219
+  - summedInput: 1.020716
     weights:
-    - -0.1753684
-    - 0.2828042
-    bias: 6
+    - 0.2724124
+    - 0.6109738
+    bias: 1.0483034
     outputs:
-    - 5.3471913
-    - 7.052738
-  - summedInput: 3.4187994
+    - 1.326359
+    - 1.671934
+  - summedInput: 1.020716
     weights:
-    - 0.6844113
-    - -0.01068771
-    bias: 7
+    - 0.008682
+    - 0.1544969
+    bias: 1.0483034
     outputs:
-    - 9.339865
-    - 6.963461
+    - 1.0571653
+    - 1.2060008
   potentialResponses:
   - {fileID: 11400000, guid: 01125af49f4a3234d989fd5ef36f3d77, type: 2}
   - {fileID: 11400000, guid: 3eafa994874a3d74992e491bfce748f3, type: 2}
   finalValues:
-  - 6.6565595
-  - 6.1390357
+  - 1.4092785
+  - 1.3781523

@@ -29,6 +29,7 @@ public class Agent : MonoBehaviour
     private List<Agent> waitingForOthers;
 
     private float mood;
+    private float health = 1.0f;
 
     public GameObject happyThought;
     public GameObject sadThought;
@@ -47,6 +48,10 @@ public class Agent : MonoBehaviour
 
     private void Update()
     {
+        if (health < 1.0f)
+        {
+            health = Mathf.Min(1.0f, health + (0.001f * Time.deltaTime));
+        }
         List<Stimulus> toRemove = new List<Stimulus>();
         List<KeyValuePair<Stimulus, float>> toUpdate = new List<KeyValuePair<Stimulus, float>>();
         foreach(var entry in recentStimuli)
@@ -69,15 +74,16 @@ public class Agent : MonoBehaviour
         {
             recentStimuli[entry.Key] = entry.Value;
         }
+
+        if (waitingForOthers.Count > 0) navAgent.isStopped = true;
         
-        if (goalRoutine == null)
+        if (goalRoutine == null && navAgent.isStopped == false)
         {
             Wander();
             GetComponent<Animator>().SetBool("Walking", true);
         }
         else
         {
-            navAgent.destination = transform.position;
             GetComponent<Animator>().SetBool("Walking", false);
         }
     }
@@ -130,7 +136,7 @@ public class Agent : MonoBehaviour
 
     private IEnumerator AchieveGoal(GoalBehaviour behaviour, Agent target)
     {
-        yield return new WaitForSeconds(1.0f);
+        navAgent.isStopped = true;
         yield return behaviour.ProcessBehaviour(this, target);
 
         currentBehaviours.RemoveAt(currentBehaviours.Count-1);
@@ -144,12 +150,18 @@ public class Agent : MonoBehaviour
         {
             goalRoutine = null;
         }
+        navAgent.isStopped = false;
     }
 
     public void UpdateMood(float moodChange)
     {
         mood += moodChange;
         StartCoroutine(ShowMood(moodChange > 0));
+    }
+
+    public void ReduceHealth(float healthChange)
+    {
+        health = Mathf.Max(0.0f, health - healthChange);
     }
 
     public void IncreaseRelationship(Agent other)
@@ -177,6 +189,7 @@ public class Agent : MonoBehaviour
         if (waitingForOthers.Contains(agent) == false)
         {
             waitingForOthers.Add(agent);
+            navAgent.isStopped = true;
         }
     }
 
@@ -185,6 +198,7 @@ public class Agent : MonoBehaviour
         if(waitingForOthers.Contains(agent))
         {
             waitingForOthers.Remove(agent);
+            if (waitingForOthers.Count < 1) navAgent.isStopped = false;
         }
     }
 
@@ -196,6 +210,11 @@ public class Agent : MonoBehaviour
     public float GetMood()
     {
         return mood;
+    }
+
+    public float GetHealth()
+    {
+        return health;
     }
 
     public IEnumerator ShowMood(bool good)

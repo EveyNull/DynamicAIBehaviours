@@ -7,6 +7,7 @@ public enum StimulusType
     ADJACENCY,
     GREETED,
     INSULTED,
+    PUNCHED,
     COUNT
 }
 
@@ -281,6 +282,10 @@ public class Stimulus : ScriptableObject
             case StimulusInput.MOOD:
                 {
                     return subject.GetMood();
+                }
+            case StimulusInput.HEALTH:
+                {
+                    return subject.GetHealth();
                 }
             default:
                 return 0;

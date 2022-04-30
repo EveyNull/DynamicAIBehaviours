@@ -8,9 +8,12 @@ public class GreetAgent : GoalBehaviour
     public override IEnumerator ProcessBehaviour(Agent subject, Agent target)
     {
         subject.GetComponent<Animator>().SetTrigger("TriggerWave");
-        target.IncreaseRelationship(subject);
-        target.ProcessStimulus(StimuliData.Instance.GetStimulusByType(StimulusType.GREETED), subject);
+        target.WaitForAgent(subject);
         yield return new WaitForSeconds(2.0f);
+        target.IncreaseRelationship(subject);
+        target.UpdateMood(1.0f);
+        target.StopWaitForAgent(subject);
+        target.ProcessStimulus(StimuliData.Instance.GetStimulusByType(StimulusType.GREETED), subject);
         yield return null;
     }
 }

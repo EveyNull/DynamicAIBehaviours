@@ -1966,7 +1966,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1062649151283620525}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 0.74
   m_Speed: 3
   m_Acceleration: 8
   avoidancePriority: 50
@@ -2012,7 +2012,7 @@ MonoBehaviour:
   stimuliData: {fileID: 11400000, guid: 844ff3d06e0626c4f998cb5b2f10baf6, type: 2}
   currentBehaviours: []
   relationshipsPureValues: []
-  wanderRadius: 25
+  wanderRadius: 100
   happyThought: {fileID: 7297446836111437248}
   sadThought: {fileID: 524526276408735114}
 --- !u!114 &3769568563415516207

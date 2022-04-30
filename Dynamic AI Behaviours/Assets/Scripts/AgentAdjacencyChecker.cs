@@ -9,7 +9,7 @@ public class AgentAdjacencyChecker : MonoBehaviour
     public float checkFrequencyMax = 15.0f;
 
     private float checkFrequency;
-    private float timeSinceLastCheck;
+    private float timeSinceLastCheck = 0.0f;
 
     public Stimulus adjacencyStimulus;
 
@@ -18,7 +18,6 @@ public class AgentAdjacencyChecker : MonoBehaviour
     {
         agent = GetComponent<Agent>();
         checkFrequency = NewAdjacencyCheckTime();
-        timeSinceLastCheck = checkFrequency;
     }
 
     void Update()

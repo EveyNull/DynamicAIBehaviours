@@ -1,6 +1,6 @@
 Using pre-set license
 Built from '2021.1/staging' branch; Version is '2021.1.21f1 (f2d5d3c59f8c) revision 15914451'; Using compiler version '192528614'; Build Type 'Release'
-OS: 'Windows 10 Home; OS build 19044.1586; Version 2009; 64bit' Language: 'en' Physical Memory: 16216 MB
+OS: 'Windows 10 Home; OS build 19044.1645; Version 2009; 64bit' Language: 'en' Physical Memory: 16216 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
 
 COMMAND LINE ARGUMENTS:
@@ -15,11 +15,11 @@ D:/Git/DynamicAIBehaviours/Dynamic AI Behaviours
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-56398
+65356
 Successfully changed project path to: D:/Git/DynamicAIBehaviours/Dynamic AI Behaviours
 D:/Git/DynamicAIBehaviours/Dynamic AI Behaviours
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 83.00 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 129.27 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.1.21f1 (f2d5d3c59f8c)
 [Subsystems] Discovering subsystems at path D:/Program Files/Unity 2021.1.21f1/Editor/Data/Resources/UnitySubsystems
@@ -35,45 +35,45 @@ Initialize mono
 Mono path[0] = 'D:/Program Files/Unity 2021.1.21f1/Editor/Data/Managed'
 Mono path[1] = 'D:/Program Files/Unity 2021.1.21f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'D:/Program Files/Unity 2021.1.21f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56560
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56096
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: D:/Program Files/Unity 2021.1.21f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.001053 seconds.
+Registered in 0.001373 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 80.16 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 169.64 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.350 seconds
+- Completed reload, in  2.350 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1350ms)
-		BeginReloadAssembly (65ms)
+	ReloadAssembly (2350ms)
+		BeginReloadAssembly (104ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (479ms)
-			LoadAssemblies (64ms)
+			CreateAndSetChildDomain (2ms)
+		EndReloadAssembly (918ms)
+			LoadAssemblies (102ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (191ms)
+			SetupTypeCache (300ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (34ms)
-			SetupLoadedEditorAssemblies (212ms)
+			RebuildScriptCaches (50ms)
+			SetupLoadedEditorAssemblies (467ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (6ms)
+				InitializePlatformSupportModulesInManaged (8ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (80ms)
-				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (97ms)
-				ProcessInitializeOnLoadMethodAttributes (27ms)
+				RefreshPlugins (170ms)
+				BeforeProcessingInitializeOnLoad (2ms)
+				ProcessInitializeOnLoadAttributes (240ms)
+				ProcessInitializeOnLoadMethodAttributes (47ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.004820 seconds.
+Registered in 0.008363 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory is not a mono symbol file
 Symbol file LoadedFromMemory doesn't match image D:\Git\DynamicAIBehaviours\Dynamic AI Behaviours\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
@@ -83,48 +83,48 @@ Symbol file LoadedFromMemory is not a mono symbol file
 Symbol file LoadedFromMemory is not a mono symbol file
 Symbol file LoadedFromMemory is not a mono symbol file
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.58 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 49.52 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.037 seconds
+- Completed reload, in  2.309 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1038ms)
-		BeginReloadAssembly (152ms)
+	ReloadAssembly (2310ms)
+		BeginReloadAssembly (415ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (5ms)
+			DisableScriptedObjects (12ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (18ms)
-		EndReloadAssembly (836ms)
-			LoadAssemblies (97ms)
+			CreateAndSetChildDomain (80ms)
+		EndReloadAssembly (1769ms)
+			LoadAssemblies (300ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (318ms)
+			SetupTypeCache (614ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (54ms)
-			SetupLoadedEditorAssemblies (294ms)
+			RebuildScriptCaches (134ms)
+			SetupLoadedEditorAssemblies (609ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (4ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (62ms)
-				ProcessInitializeOnLoadAttributes (220ms)
-				ProcessInitializeOnLoadMethodAttributes (5ms)
-				AfterProcessingInitializeOnLoad (2ms)
+				InitializePlatformSupportModulesInManaged (6ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (51ms)
+				BeforeProcessingInitializeOnLoad (104ms)
+				ProcessInitializeOnLoadAttributes (437ms)
+				ProcessInitializeOnLoadMethodAttributes (7ms)
+				AfterProcessingInitializeOnLoad (3ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (7ms)
+			AwakeInstancesAfterBackupRestoration (13ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
-Refreshing native plugins compatible for Editor in 1.02 ms, found 3 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.09 seconds
+Refreshing native plugins compatible for Editor in 1.03 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3149 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 112.9 MB.
-System memory in use after: 113.1 MB.
+Unloading 3164 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 132.7 MB.
+System memory in use after: 132.9 MB.
 
-Unloading 25 unused Assets to reduce memory usage. Loaded Objects now: 3593.
-Total: 3.148300 ms (FindLiveObjects: 0.324500 ms CreateObjectMapping: 0.203800 ms MarkObjects: 2.523800 ms  DeleteObjects: 0.079800 ms)
+Unloading 24 unused Assets to reduce memory usage. Loaded Objects now: 3629.
+Total: 4.317700 ms (FindLiveObjects: 0.300900 ms CreateObjectMapping: 0.248200 ms MarkObjects: 3.600600 ms  DeleteObjects: 0.164900 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -138,25 +138,324 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  path: Assets/Scripts/PersonalityTrait.cs
-  artifactKey: Guid(520d13702ad038e4ea9c2a5036ba958e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/PersonalityTrait.cs using Guid(520d13702ad038e4ea9c2a5036ba958e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ba60732fdc30eb0a32310872089e7c03') in 0.018367 seconds 
+  path: Assets/Vexe
+  artifactKey: Guid(8df68a48b24bc51438c414d9faf3e661) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Vexe using Guid(8df68a48b24bc51438c414d9faf3e661) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '67a9bd1c261c7ab730940bfe635e7031') in 0.043451 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000274 seconds.
-  path: Assets/Scripts/Agent.cs
-  artifactKey: Guid(7b330e05a222b954298cb2d8760506a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Agent.cs using Guid(7b330e05a222b954298cb2d8760506a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f652d4dea6a677b37d774d441b644e13') in 0.004388 seconds 
+  Time since last request: 0.906439 seconds.
+  path: Assets/Vexe/ShowEmAll/Attributes
+  artifactKey: Guid(e146048543612004389047730a78441b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Vexe/ShowEmAll/Attributes using Guid(e146048543612004389047730a78441b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd7ec432ffa5791c42e0a5593aff70df2') in 0.092506 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 6.521089 seconds.
-  path: Assets/Scripts/PersonalityTrait.cs
-  artifactKey: Guid(520d13702ad038e4ea9c2a5036ba958e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/PersonalityTrait.cs using Guid(520d13702ad038e4ea9c2a5036ba958e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '50e640a8f619433dec1e3f027a8a156e') in 0.002487 seconds 
+  Time since last request: 0.191268 seconds.
+  path: Assets/Vexe/ShowEmAll/Attributes/EnumMaskAttribute.cs
+  artifactKey: Guid(bdc17da4a96d1864d82bb03790dd602d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Vexe/ShowEmAll/Attributes/EnumMaskAttribute.cs using Guid(bdc17da4a96d1864d82bb03790dd602d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '38d8937ba78efb830a2db7bf60418bd0') in 0.022379 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 202.490397 seconds.
+  path: Assets/Vexe/Editor/EditorGUIFramework
+  artifactKey: Guid(50226914030765c4298257af8c167773) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Vexe/Editor/EditorGUIFramework using Guid(50226914030765c4298257af8c167773) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5b96b431279ae6291cb49161ef073a54') in 0.014156 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.403334 seconds.
+  path: Assets/Vexe/Editor/BetterPrefs.cs
+  artifactKey: Guid(85c5254a76402134399710629cdb8ff1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Vexe/Editor/BetterPrefs.cs using Guid(85c5254a76402134399710629cdb8ff1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4483b176409321d2e17851432c8e0d9a') in 0.005800 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.489909 seconds.
+  path: Assets/Vexe/Editor/SelectionMemorizer.cs
+  artifactKey: Guid(3f7621f73a6ea16478581c7f27be64ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Vexe/Editor/SelectionMemorizer.cs using Guid(3f7621f73a6ea16478581c7f27be64ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '81cb0fa3aea5d153400fc037f1c60220') in 0.009049 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 253.045964 seconds.
+  path: Assets/kenney_citykitroads/Isometric
+  artifactKey: Guid(c1b734a0fb6cf5d4191d0213e704a63d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/kenney_citykitroads/Isometric using Guid(c1b734a0fb6cf5d4191d0213e704a63d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b4c85d36ea2888c7af3b8ca0b5b291ff') in 1.089272 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000329 seconds.
+  path: Assets/kenney_citykitroads/Isometric/construction_light_NE.png
+  artifactKey: Guid(a5d12ff38b384264da3e918eda348d3e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/kenney_citykitroads/Isometric/construction_light_NE.png using Guid(a5d12ff38b384264da3e918eda348d3e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a0a22fdc677c8d00d3c9423f8ece156f') in 0.214598 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000195 seconds.
+  path: Assets/kenney_citykitroads/Isometric/road_bend_SW.png
+  artifactKey: Guid(8f9deda3f4f5f274fac41aa7a7aeafe8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/kenney_citykitroads/Isometric/road_bend_SW.png using Guid(8f9deda3f4f5f274fac41aa7a7aeafe8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3dbf0c17244b82b82fba6374fb06f66d') in 0.058481 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000349 seconds.
+  path: Assets/kenney_citykitroads/Isometric/bridge_pillarWide_NW.png
+  artifactKey: Guid(baa3195436e3c8d4885716ba8346334a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/kenney_citykitroads/Isometric/bridge_pillarWide_NW.png using Guid(baa3195436e3c8d4885716ba8346334a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ee938230538e6369226c6430191d82eb') in 0.065866 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000292 seconds.
+  path: Assets/kenney_citykitroads/Isometric/light_square_SE.png
+  artifactKey: Guid(d4068cf089370e64d8f1ea324f465cb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/kenney_citykitroads/Isometric/light_square_SE.png using Guid(d4068cf089370e64d8f1ea324f465cb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '74b606782a723f628bf74c5ca65f181c') in 0.095073 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000287 seconds.
+  path: Assets/kenney_citykitroads/Isometric/light_squareDouble_SW.png
+  artifactKey: Guid(8cf32e8bc0085614894dc5188d48e269) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/kenney_citykitroads/Isometric/light_squareDouble_SW.png using Guid(8cf32e8bc0085614894dc5188d48e269) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '439a0e6766549a86f9739cad25373f66') in 0.069081 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000471 seconds.
+  path: Assets/kenney_citykitroads/Isometric/road_bendSquare_NE.png
+  artifactKey: Guid(a4a0513267e079849a1c27734809b519) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/kenney_citykitroads/Isometric/road_bendSquare_NE.png using Guid(a4a0513267e079849a1c27734809b519) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6940929b42521cfc6155f95db642a940') in 0.094227 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000900 seconds.
+  path: Assets/kenney_citykitroads/Isometric/light_curved_NW.png
+  artifactKey: Guid(5c59aa47fa7359444bb46255a6e21ab9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/kenney_citykitroads/Isometric/light_curved_NW.png using Guid(5c59aa47fa7359444bb46255a6e21ab9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2b72cf2eaaac3ba7d444ceb7dbef4516') in 0.064640 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000286 seconds.
+  path: Assets/kenney_citykitroads/Isometric/road_bend_NW.png
+  artifactKey: Guid(59ded04e260823641bd020bdad58983f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/kenney_citykitroads/Isometric/road_bend_NW.png using Guid(59ded04e260823641bd020bdad58983f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ef079ba294baced8aac12bc3b424fd45') in 0.226156 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000358 seconds.
+  path: Assets/kenney_citykitroads/Isometric/light_curvedCross_SW.png
+  artifactKey: Guid(69fff03e385b80b45b44ee56116e4ca7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/kenney_citykitroads/Isometric/light_curvedCross_SW.png using Guid(69fff03e385b80b45b44ee56116e4ca7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '86bf51067c0a05a98436deb74ce321b1') in 0.076996 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000321 seconds.
+  path: Assets/kenney_citykitroads/Isometric/bridge_pillar_SW.png
+  artifactKey: Guid(2aeb37029de757e4aaafabd06f53e10c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/kenney_citykitroads/Isometric/bridge_pillar_SW.png using Guid(2aeb37029de757e4aaafabd06f53e10c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '281f32116199c39b36b52facea4a9b31') in 0.061905 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000324 seconds.
+  path: Assets/kenney_citykitroads/Isometric/construction_light_SE.png
+  artifactKey: Guid(6274131a33913a54084ad065f0468c4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/kenney_citykitroads/Isometric/construction_light_SE.png using Guid(6274131a33913a54084ad065f0468c4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '95342760e5acaa9a124c42fd202e0ca8') in 0.070994 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000264 seconds.
+  path: Assets/kenney_citykitroads/Isometric/construction_pylon_NE.png
+  artifactKey: Guid(d7261d56be9fba742acef533efdaae2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/kenney_citykitroads/Isometric/construction_pylon_NE.png using Guid(d7261d56be9fba742acef533efdaae2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '773766dfa6bc15c296e9fbc945d31583') in 0.026231 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000217 seconds.
+  path: Assets/kenney_citykitroads/Isometric/light_squareCross_NW.png
+  artifactKey: Guid(799bdd1301bb73a4caa807952cc23129) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/kenney_citykitroads/Isometric/light_squareCross_NW.png using Guid(799bdd1301bb73a4caa807952cc23129) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 2.425558 seconds  code(4) message(Build asset version error: assets/kenney_citykitroads/isometric/light_squarecross_nw.png in SourceAssetDB has modification time of '2021-10-14T22:17:23Z' while content on disk has modification time of '0001-01-01T00:00:00Z' with error code 2
+Stacktrace:
+0x00007ff7bcd3719c (Unity) StackWalker::GetCurrentCallstack
+0x00007ff7bcd3d519 (Unity) StackWalker::ShowCallstack
+0x00007ff7bd538363 (Unity) GetStacktrace
+0x00007ff7bd66bb79 (Unity) GetAssetHashAndValidate
+0x00007ff7bd66721a (Unity) AssetVersionBuilder::BuildHashOfSourceAssetArray
+0x00007ff7bd6654d7 (Unity) AssetVersionBuilder::BuildAssetVersion
+0x00007ff7bd6403f9 (Unity) CreateAssetVersionBuilder
+0x00007ff7bd646702 (Unity) ImportToObjects
+0x00007ff7bd6454d8 (Unity) ImportAsset
+0x00007ff7bd5e3a1f (Unity) AssetImportWorker::Import
+0x00007ff7bd606ad2 (Unity) <lambda_9a0c3c600e605f826d039b184a304624>::operator()
+0x00007ff7bd68d372 (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)> >::do_complete
+0x00007ff7bd68f5e0 (Unity) asio::detail::win_iocp_io_service::do_one
+0x00007ff7bd692cce (Unity) asio::io_service::run
+0x00007ff7bd62f1aa (Unity) RunAssetImportWorkerClientV2
+0x00007ff7bd62f200 (Unity) RunAssetImporterV2
+0x00007ff7bd12f427 (Unity) Application::InitializeProject
+0x00007ff7bd541a07 (Unity) WinMain
+0x00007ff7bf0aa222 (Unity) __scrt_common_main_seh
+0x00007ff9cc6a7034 (KERNEL32) BaseThreadInitThunk
+0x00007ff9cd8c2651 (ntdll) RtlUserThreadStart
+)
+  ERROR: Build asset version error: assets/kenney_citykitroads/isometric/light_squarecross_nw.png in SourceAssetDB has modification time of '2021-10-14T22:17:23Z' while content on disk has modification time of '0001-01-01T00:00:00Z' with error code 2
+Stacktrace:
+0x00007ff7bcd3719c (Unity) StackWalker::GetCurrentCallstack
+0x00007ff7bcd3d519 (Unity) StackWalker::ShowCallstack
+0x00007ff7bd538363 (Unity) GetStacktrace
+0x00007ff7bd66bb79 (Unity) GetAssetHashAndValidate
+0x00007ff7bd66721a (Unity) AssetVersionBuilder::BuildHashOfSourceAssetArray
+0x00007ff7bd6654d7 (Unity) AssetVersionBuilder::BuildAssetVersion
+0x00007ff7bd6403f9 (Unity) CreateAssetVersionBuilder
+0x00007ff7bd646702 (Unity) ImportToObjects
+0x00007ff7bd6454d8 (Unity) ImportAsset
+0x00007ff7bd5e3a1f (Unity) AssetImportWorker::Import
+0x00007ff7bd606ad2 (Unity) <lambda_9a0c3c600e605f826d039b184a304624>::operator()
+0x00007ff7bd68d372 (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)> >::do_complete
+0x00007ff7bd68f5e0 (Unity) asio::detail::win_iocp_io_service::do_one
+0x00007ff7bd692cce (Unity) asio::io_service::run
+0x00007ff7bd62f1aa (Unity) RunAssetImportWorkerClientV2
+0x00007ff7bd62f200 (Unity) RunAssetImporterV2
+0x00007ff7bd12f427 (Unity) Application::InitializeProject
+0x00007ff7bd541a07 (Unity) WinMain
+0x00007ff7bf0aa222 (Unity) __scrt_common_main_seh
+0x00007ff9cc6a7034 (KERNEL32) BaseThreadInitThunk
+0x00007ff9cd8c2651 (ntdll) RtlUserThreadStart
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000179 seconds.
+  path: Assets/kenney_citykitroads/Side/construction_barrier.png
+  artifactKey: Guid(80b2fd960493ad245a32e49f0579548d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/kenney_citykitroads/Side/construction_barrier.png using Guid(80b2fd960493ad245a32e49f0579548d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '47ec0eb137ef8cf872c6b26990c4efa2') in 0.036655 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000270 seconds.
+  path: Assets/kenney_citykitroads/Side/road_bendBarrier.png
+  artifactKey: Guid(563df058b9b6cde4aad9bb067325ca2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/kenney_citykitroads/Side/road_bendBarrier.png using Guid(563df058b9b6cde4aad9bb067325ca2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b6f1c6a5508accb33f9d769435ff9a32') in 0.056989 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000210 seconds.
+  path: Assets/kenney_citykitroads/Side/road_drivewaySingleBarrier.png
+  artifactKey: Guid(6383bc34519d9984ba0ba0a0b6d7d44f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/kenney_citykitroads/Side/road_drivewaySingleBarrier.png using Guid(6383bc34519d9984ba0ba0a0b6d7d44f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '21b9c601ee1f24d7d22428b0ab27fb2a') in 0.046211 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000291 seconds.
+  path: Assets/kenney_citykitroads/Side/bridge_pillarWide.png
+  artifactKey: Guid(5c56f255d01f30b47ba703f6aa8062b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/kenney_citykitroads/Side/bridge_pillarWide.png using Guid(5c56f255d01f30b47ba703f6aa8062b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'efde23075d85a3a12056e10b1fede80a') in 0.058965 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000300 seconds.
+  path: Assets/kenney_citykitroads/Side/road_bendSquare.png
+  artifactKey: Guid(bd6275ceb3c79a54d8218a85f15a4149) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/kenney_citykitroads/Side/road_bendSquare.png using Guid(bd6275ceb3c79a54d8218a85f15a4149) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '815cae9cd4c19c38f039a746732bc092') in 0.085266 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000165 seconds.
+  path: Assets/kenney_citykitroads/Side
+  artifactKey: Guid(d7470ae67a1a96e4e9a0b93c02575d2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/kenney_citykitroads/Side using Guid(d7470ae67a1a96e4e9a0b93c02575d2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2b8c803ff9b55cf85c1030950b5fb385') in 0.007614 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000199 seconds.
+  path: Assets/kenney_citykitroads/Side/road_crossroadBarrier.png
+  artifactKey: Guid(e88fb087ea6ea934eab861d4ee3ce1bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/kenney_citykitroads/Side/road_crossroadBarrier.png using Guid(e88fb087ea6ea934eab861d4ee3ce1bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f3942801720538a34359eb834ba2ddd2') in 0.127744 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000351 seconds.
+  path: Assets/kenney_citykitroads/Side/road_crossroadLine.png
+  artifactKey: Guid(59cc613f1acaf734cade9d48b14ab373) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/kenney_citykitroads/Side/road_crossroadLine.png using Guid(59cc613f1acaf734cade9d48b14ab373) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9c1bed1989477c294f0e00ebe918f1c4') in 0.037732 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000227 seconds.
+  path: Assets/kenney_citykitroads/Side/road_crossroadPath.png
+  artifactKey: Guid(e44cd84367ad16142bb659cca6263ae8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/kenney_citykitroads/Side/road_crossroadPath.png using Guid(e44cd84367ad16142bb659cca6263ae8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cab52ae2cf25b41c783a67eb5929f2f0') in 0.052277 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000354 seconds.
+  path: Assets/kenney_citykitroads/Side/light_square.png
+  artifactKey: Guid(f6853861df9b2df4ab5fe2d9be172aef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/kenney_citykitroads/Side/light_square.png using Guid(f6853861df9b2df4ab5fe2d9be172aef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dc9cb1be9bc77147f5799eec7617c122') in 0.058975 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000173 seconds.
+  path: Assets/kenney_citykitroads/Side/road_intersection.png
+  artifactKey: Guid(f9691a54fdb059b4c86f7e4d26e7fa47) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/kenney_citykitroads/Side/road_intersection.png using Guid(f9691a54fdb059b4c86f7e4d26e7fa47) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7f783ffc55ad113e37167c50dfc2015b') in 0.043598 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000169 seconds.
+  path: Assets/kenney_citykitroads/Side/road_curveIntersectionBarrier.png
+  artifactKey: Guid(ae9a8e8575376c04f947055c0cff875b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/kenney_citykitroads/Side/road_curveIntersectionBarrier.png using Guid(ae9a8e8575376c04f947055c0cff875b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '54e9eff0eaecb1b44c74186f9062174d') in 0.019805 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000258 seconds.
+  path: Assets/kenney_citykitroads/Side/road_crossroad.png
+  artifactKey: Guid(1a88f331adb9c5148869fcabccaf93bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/kenney_citykitroads/Side/road_crossroad.png using Guid(1a88f331adb9c5148869fcabccaf93bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dfb26c85e71a9a82019e08d8783740a6') in 0.040747 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000235 seconds.
+  path: Assets/kenney_citykitroads/Side/road_end.png
+  artifactKey: Guid(2a2d79c5cab759b449ac8cc8e50fd1aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/kenney_citykitroads/Side/road_end.png using Guid(2a2d79c5cab759b449ac8cc8e50fd1aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '546a4f4b98e473e74f6a9c391f19bea2') in 0.037172 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000427 seconds.
+  path: Assets/kenney_citykitroads/Side/bridge_pillar.png
+  artifactKey: Guid(62465a31d98cf1c418e49adc31b33dbf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/kenney_citykitroads/Side/bridge_pillar.png using Guid(62465a31d98cf1c418e49adc31b33dbf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0bd5fcd96bdf75c32801cf59faf14bfc') in 0.078731 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000587 seconds.
+  path: Assets/kenney_citykitroads/Side/road_curve.png
+  artifactKey: Guid(c8d863dd47abdc04e9d78006ca8bf2c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/kenney_citykitroads/Side/road_curve.png using Guid(c8d863dd47abdc04e9d78006ca8bf2c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4d675a47e0be08ec53b0daaed2abcfe7') in 0.041409 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000126 seconds.
+  path: Assets/kenney_citykitroads/Side/road_intersectionPath.png
+  artifactKey: Guid(404a5bb7c5a985d4480bda9f27b756c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/kenney_citykitroads/Side/road_intersectionPath.png using Guid(404a5bb7c5a985d4480bda9f27b756c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '65e7f4a143a0443e165a6d81d40979af') in 0.312422 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8.125602 seconds.
+  path: Assets/Scenes/SampleScene.unity
+  artifactKey: Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleScene.unity using Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6b354bef9cc2d0f9b9071f0b09581e8f') in 0.006651 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 77.627918 seconds.
+  path: Assets/ExplosiveLLC/RPG Character Mecanim Animation Pack FREE/Materials/RPG-Character.mat
+  artifactKey: Guid(ad8c2bee857aaca4dbcf348b7e988a44) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExplosiveLLC/RPG Character Mecanim Animation Pack FREE/Materials/RPG-Character.mat using Guid(ad8c2bee857aaca4dbcf348b7e988a44) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bb164e8fbf8997271396f9bf7ec27d7b') in 0.099086 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000907 seconds.
+  path: Assets/Scenes/SampleScene/NavMesh.asset
+  artifactKey: Guid(02d6b2c4bb087cd41b7d86ca907c598c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleScene/NavMesh.asset using Guid(02d6b2c4bb087cd41b7d86ca907c598c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '598106d1e65961dbc1b50be548cc11b4') in 0.010044 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000421 seconds.
+  path: Assets/ExplosiveLLC/RPG Character Mecanim Animation Pack FREE/Textures/RPG-Character.psd
+  artifactKey: Guid(8d6091f14c0c6604595a64a4e031e7e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExplosiveLLC/RPG Character Mecanim Animation Pack FREE/Textures/RPG-Character.psd using Guid(8d6091f14c0c6604595a64a4e031e7e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '44b1d9ba6ae884b338f94fc0ee8039fb') in 0.013838 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 81.406045 seconds.
+  path: Assets/ExplosiveLLC/RPG Character Mecanim Animation Pack FREE/Avatars
+  artifactKey: Guid(d6339bc8184c0dd4697566ef8b769d8e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExplosiveLLC/RPG Character Mecanim Animation Pack FREE/Avatars using Guid(d6339bc8184c0dd4697566ef8b769d8e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '76f56b3f7b73d9f410bbee424387aad6') in 0.007551 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.892190 seconds.
+  path: Assets/ExplosiveLLC/RPG Character Mecanim Animation Pack FREE/Avatars/RPG-Character-Avatar.ht
+  artifactKey: Guid(ac07db581df5b45479d59af3b97b685e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExplosiveLLC/RPG Character Mecanim Animation Pack FREE/Avatars/RPG-Character-Avatar.ht using Guid(ac07db581df5b45479d59af3b97b685e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9a5251b7b2e83aa7abb943db57940541') in 0.182898 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000213 seconds.
+  path: Assets/ExplosiveLLC/RPG Character Mecanim Animation Pack FREE/Avatars/RPG-Character-Upperbody-AvatarMask.mask
+  artifactKey: Guid(87216dbdf7dd8a047817768e0beb23b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExplosiveLLC/RPG Character Mecanim Animation Pack FREE/Avatars/RPG-Character-Upperbody-AvatarMask.mask using Guid(87216dbdf7dd8a047817768e0beb23b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0cd36223113dd652bda59e392a7bb93d') in 0.027139 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.782108 seconds.
+  path: Assets/ExplosiveLLC/RPG Character Mecanim Animation Pack FREE/Models/Weapons/2Hand-Sword.FBX
+  artifactKey: Guid(8a7b78e82902d1b4eba2923c6a4cf1c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ExplosiveLLC/RPG Character Mecanim Animation Pack FREE/Models/Weapons/2Hand-Sword.FBX using Guid(8a7b78e82902d1b4eba2923c6a4cf1c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cf152bc376f8849ad68be866339c4a36') in 0.155746 seconds 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.004334 seconds.
+Registered in 0.006848 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory is not a mono symbol file
 Symbol file LoadedFromMemory doesn't match image D:\Git\DynamicAIBehaviours\Dynamic AI Behaviours\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
@@ -166,45 +465,45 @@ Symbol file LoadedFromMemory is not a mono symbol file
 Symbol file LoadedFromMemory is not a mono symbol file
 Symbol file LoadedFromMemory is not a mono symbol file
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.64 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 0.81 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.963 seconds
+- Completed reload, in  1.555 seconds
 Domain Reload Profiling:
-	ReloadAssembly (963ms)
-		BeginReloadAssembly (118ms)
+	ReloadAssembly (1556ms)
+		BeginReloadAssembly (177ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (4ms)
+			DisableScriptedObjects (6ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (33ms)
-		EndReloadAssembly (793ms)
-			LoadAssemblies (91ms)
+			CreateAndSetChildDomain (56ms)
+		EndReloadAssembly (1306ms)
+			LoadAssemblies (148ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (316ms)
+			SetupTypeCache (497ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (48ms)
-			SetupLoadedEditorAssemblies (261ms)
+			RebuildScriptCaches (55ms)
+			SetupLoadedEditorAssemblies (451ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (5ms)
-				SetLoadedEditorAssemblies (0ms)
+				InitializePlatformSupportModulesInManaged (8ms)
+				SetLoadedEditorAssemblies (1ms)
 				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (45ms)
-				ProcessInitializeOnLoadAttributes (203ms)
-				ProcessInitializeOnLoadMethodAttributes (5ms)
-				AfterProcessingInitializeOnLoad (2ms)
+				BeforeProcessingInitializeOnLoad (67ms)
+				ProcessInitializeOnLoadAttributes (365ms)
+				ProcessInitializeOnLoadMethodAttributes (6ms)
+				AfterProcessingInitializeOnLoad (3ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (6ms)
+			AwakeInstancesAfterBackupRestoration (46ms)
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.59 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 0.75 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3143 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 112.8 MB.
-System memory in use after: 113.0 MB.
+Unloading 3158 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 148.6 MB.
+System memory in use after: 148.9 MB.
 
-Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 3595.
-Total: 2.882900 ms (FindLiveObjects: 0.246000 ms CreateObjectMapping: 0.146500 ms MarkObjects: 2.447300 ms  DeleteObjects: 0.042300 ms)
+Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 4102.
+Total: 5.238800 ms (FindLiveObjects: 0.497500 ms CreateObjectMapping: 0.310700 ms MarkObjects: 4.393400 ms  DeleteObjects: 0.036400 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -216,4 +515,93 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-AssetImportWorkerClient::OnTransportError - code=2 error=End of file
+========================================================================
+Received Import Request.
+  Time since last request: 86.723307 seconds.
+  path: Assets/Vexe/DEVBUS
+  artifactKey: Guid(ae44f6f5bb629dc4da094f7d0ed182b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Vexe/DEVBUS using Guid(ae44f6f5bb629dc4da094f7d0ed182b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd24d4917c84a80eb90f16d2b7b5f39d5') in 0.066839 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.669365 seconds.
+  path: Assets/Vexe/Editor
+  artifactKey: Guid(1ab5fb9c491496041bb1009224cdbccc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Vexe/Editor using Guid(1ab5fb9c491496041bb1009224cdbccc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7a2b128f176e98007c8eb9e0f1d89411') in 0.027808 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.539346 seconds.
+  path: Assets/Vexe/Editor/EditorGUIFramework/Wrappers
+  artifactKey: Guid(aaf509c9cb5343f4fa88e6febd39276c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Vexe/Editor/EditorGUIFramework/Wrappers using Guid(aaf509c9cb5343f4fa88e6febd39276c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '760ac511b29752097e3c14b813ac8435') in 0.006242 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.637654 seconds.
+  path: Assets/Vexe/Editor/EditorGUIFramework/Wrappers/BaseWrapper
+  artifactKey: Guid(d35da20bf8afba343b9e9d63d85a9728) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Vexe/Editor/EditorGUIFramework/Wrappers/BaseWrapper using Guid(d35da20bf8afba343b9e9d63d85a9728) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a462633950a8ab8a552c9396a6262bd1') in 0.016837 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.308666 seconds.
+  path: Assets/Vexe/uFAction
+  artifactKey: Guid(4a3f0ef9bf97fd74c952e652f19f9221) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Vexe/uFAction using Guid(4a3f0ef9bf97fd74c952e652f19f9221) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6aec1cb765563646d74cc33d5dd8fd99') in 0.010027 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.184483 seconds.
+  path: Assets/Vexe/uFAction/Settings.asset
+  artifactKey: Guid(a22b72abd0e873c47bdd53dc06777818) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Vexe/uFAction/Settings.asset using Guid(a22b72abd0e873c47bdd53dc06777818) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '66ab666b01d17270f22e6e73104a9429') in 0.022824 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.448207 seconds.
+  path: Assets/Vexe/uFAction/Themes
+  artifactKey: Guid(02f5304cf9b27664c9c575713c819bb1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Vexe/uFAction/Themes using Guid(02f5304cf9b27664c9c575713c819bb1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f82cf56b00d90d7c60aa8b7b3432a27a') in 0.087399 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000201 seconds.
+  path: Assets/Vexe/uFAction/Themes/Heisenburg.asset
+  artifactKey: Guid(8fb8998af26ad6444b56d69e98754380) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Vexe/uFAction/Themes/Heisenburg.asset using Guid(8fb8998af26ad6444b56d69e98754380) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9760f273d707073d18b9d3b6704d48fa') in 0.006915 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000347 seconds.
+  path: Assets/Vexe/uFAction/Themes/DarkVectrum.asset
+  artifactKey: Guid(af5abeb1882d1d243a13f7f5003be85e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Vexe/uFAction/Themes/DarkVectrum.asset using Guid(af5abeb1882d1d243a13f7f5003be85e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '85e8dbcc95e714c10f24ab6091b0bf62') in 0.008776 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000340 seconds.
+  path: Assets/Vexe/uFAction/Themes/RGB.asset
+  artifactKey: Guid(08dbd613154a8a746bd8240852fb26b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Vexe/uFAction/Themes/RGB.asset using Guid(08dbd613154a8a746bd8240852fb26b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4960383ef7f19d9f26062de4ec762097') in 0.022777 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 117.456109 seconds.
+  path: Assets/rpg animations/animations/no_weapon/U_human_hello_friendly.fbx
+  artifactKey: Guid(bc509f8939b12264ea2fe84b2ad22d28) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/rpg animations/animations/no_weapon/U_human_hello_friendly.fbx using Guid(bc509f8939b12264ea2fe84b2ad22d28) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '34b15050fd57b6e1b80ffcc3fed96106') in 0.536942 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000260 seconds.
+  path: Assets/rpg animations/animations/no_weapon/U_human_listening_friendly.fbx
+  artifactKey: Guid(015627c4a6848b641ac0f61ce8211742) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/rpg animations/animations/no_weapon/U_human_listening_friendly.fbx using Guid(015627c4a6848b641ac0f61ce8211742) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '86bc3fea16fc4719aa6d29f120313a27') in 0.096669 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000192 seconds.
+  path: Assets/rpg animations/animations/no_weapon/U_human_talk_friendly.fbx
+  artifactKey: Guid(6c67229c4276fb24d97642150c941a34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/rpg animations/animations/no_weapon/U_human_talk_friendly.fbx using Guid(6c67229c4276fb24d97642150c941a34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a387e405cdb3ee02b70793599bf25708') in 0.057384 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000199 seconds.
+  path: Assets/rpg animations/animations/no_weapon/U_human_idle_01.fbx
+  artifactKey: Guid(08f36bea7bc4d2e40bf3407c1c88195c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/rpg animations/animations/no_weapon/U_human_idle_01.fbx using Guid(08f36bea7bc4d2e40bf3407c1c88195c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '99c87be72e8e252b514d21891ab603a8') in 0.069855 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000378 seconds.
+  path: Assets/rpg animations/animations/no_weapon/U_human_hit_01.fbx
+  artifactKey: Guid(463938ab511193941aacdfb8dda1a791) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/rpg animations/animations/no_weapon/U_human_hit_01.fbx using Guid(463938ab511193941aacdfb8dda1a791) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd3eb89d6926d2986a4fc56fdba78ed97') in 0.065877 seconds 

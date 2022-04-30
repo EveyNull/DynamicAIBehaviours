@@ -7,11 +7,12 @@ public class ReturnGreeting : GoalBehaviour
 {
     public override IEnumerator ProcessBehaviour(Agent subject, Agent target)
     {
-        Debug.Log(subject.ToString() + " said hello to " + target.ToString() + ", raising the other's opinion of them.");
         subject.GetComponent<Animator>().SetTrigger("TriggerWave");
+        target.WaitForAgent(subject);
+        yield return new WaitForSeconds(2.0f);
         target.IncreaseRelationship(subject);
         target.UpdateMood(1.0f);
-        yield return new WaitForSeconds(2.0f);
+        target.StopWaitForAgent(subject);
         yield return null;
     }
 }
