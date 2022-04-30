@@ -16,6 +16,9 @@ public class BackPropagateUI : MonoBehaviour
     [SerializeField]
     private Dropdown stimulusFilter;
 
+    [SerializeField]
+    private Color highlightColor;
+
     private Stimulus filteredStimulus;
 
     public Text currentStimulusText;
@@ -86,12 +89,19 @@ public class BackPropagateUI : MonoBehaviour
             }
             else inputTexts[i].text = "";
         }
+        float highestOutput = float.NegativeInfinity;
+        int highestIndex = 0;
         for(int i = 0; i < outputTexts.Count; ++i)
         {
             if (i < stimulus.potentialResponses.Count)
             {
                 string text = (stimulus.potentialResponses[i]?.ToString() ?? "No response") + " ";
                 text += stimulus.finalValues[i].ToString();
+                if(stimulus.finalValues[i] > highestOutput)
+                {
+                    highestOutput = stimulus.finalValues[i];
+                    highestIndex = i;
+                }
                 outputTexts[i].text = text;
                 outputTexts[i].gameObject.SetActive(true);
             }
@@ -100,7 +110,9 @@ public class BackPropagateUI : MonoBehaviour
                 outputTexts[i].text = "";
                 outputTexts[i].gameObject.SetActive(false);
             }
+            outputTexts[i].color = Color.black;
         }
+        outputTexts[highestIndex].color = highlightColor;
         initializeButton.gameObject.SetActive(true);
     }
 

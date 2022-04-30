@@ -4394,6 +4394,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stimuliData: {fileID: 11400000, guid: 844ff3d06e0626c4f998cb5b2f10baf6, type: 2}
   stimulusFilter: {fileID: 907182655}
+  highlightColor: {r: 0, g: 0.6509434, b: 0.048218, a: 1}
   currentStimulusText: {fileID: 755025268}
   initializeButton: {fileID: 301880470}
   inputField: {fileID: 0}
